@@ -1,0 +1,35 @@
+{
+  "name": "4lyrics",
+  "version": "1.0.0",
+  "description": "Get lyrics from 4 sites, lyrics.com, musixmatch.com, azlyrics.com and lyricslive.com",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "node-fetch": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khafradev/4lyrics.git"
+  },
+  "keywords": [
+    "lyrics",
+    "musixmatch",
+    "azlyrics",
+    "lyrics",
+    "song",
+    "lyrics"
+  ],
+  "author": "Khafra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/khafradev/4lyrics/issues"
+  },
+  "homepage": "https://github.com/khafradev/4lyrics#readme"
+}
