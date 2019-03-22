@@ -12,10 +12,9 @@ lyrics.azlyrics.getURL('queen you\'re my best friend')
 lyrics.lyricscom.getURL('limelight')
     .then(r => lyrics.lyricscom.getLyrics(r))
     .then(() => console.log('lyrics.com lyrics obtained'))
-    .catch(console.error)
+    .catch(console.error);
 
 lyrics.lyricslive.getURL('don\'t stop')
     .then(r => lyrics.lyricslive.getLyrics(r))
     .then(() => console.log('lyricslive lyrics obtained'))
-    .catch(console.error)
-
+    .catch(console.error);
