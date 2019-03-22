@@ -1,6 +1,6 @@
 {
   "name": "4lyrics",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Get lyrics from 4 sites, lyrics.com, musixmatch.com, azlyrics.com and lyricslive.com",
   "main": "index.js",
   "directories": {
@@ -12,7 +12,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,8 @@
     "lyrics",
     "musixmatch",
     "azlyrics",
+    "lyrics.com",
+    "lyricslive",
     "song lyrics"
   ],
   "author": "Khafra",
