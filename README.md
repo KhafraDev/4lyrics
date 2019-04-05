@@ -46,4 +46,7 @@ lyrics.lyricslive.getURL('don\'t stop')
     .catch(console.error);
 ```
 
+# Changelog
+1.1.5: Remove more divs in musixmatch that interfere.
+
 
