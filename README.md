@@ -7,6 +7,16 @@ With user input :)
 * lyricslive
 
 ***
+## Benefits
+* Support for multiple sites.
+* Asynchronous.
+* Easy implementation.
+***
+## Downsides
+* UNOFFICAL "APIs". Read sites' TOS and EULA before using.
+* Possible revocation of access to site(s).
+* NO Captcha support (submit a pull request).
+***
 
 # Basic Use
 * Examples used from test file
@@ -48,5 +58,7 @@ lyrics.lyricslive.getURL('don\'t stop')
 
 # Changelog
 1.1.5: Remove more divs in musixmatch that interfere.
+1.1.6: Add a second way of detection and remove "hacky" code.
+1.1.61: Fix a bug that caused lyrics to be removed accidentally.
 
 
