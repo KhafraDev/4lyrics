@@ -27,7 +27,7 @@ const getLyrics = url => {
         ).then(r => r.text())
         .then(body => {
             const $ = cheerio.load(body);
-            $('div[class=" col-sm-10 col-md-8 col-ml-6 col-lg-6"] div').first().remove();
+            //$('div[class=" col-sm-10 col-md-8 col-ml-6 col-lg-6"] div').first().remove();
             $('div[class="lyrics-to hidden-xs hidden-sm"]').remove();
             $('div[class="mxm-lyrics"] div[class=""]').remove();
             $('div[class="translation-list-box"]').remove();
@@ -45,6 +45,7 @@ const getLyrics = url => {
             const potential = $('div[class="mxm-lyrics"] span p').text().trim();
             const potential2 = $('div[class="mxm-track-lyrics-container"] div[class="mxm-lyrics"] span').first().text();
             
+            console.log(potential.length, potential2.length)
             if(potential && potential.length >= potential2.length && potential.length > 0) {
                 return resolve(potential);
             } else if(potential2 && potential2.length > potential.length && potential2.length > 0) {
