@@ -1,18 +1,18 @@
 {
   "name": "4lyrics",
-  "version": "1.1.6",
-  "description": "Get lyrics from 4 sites, lyrics.com, musixmatch.com, azlyrics.com and lyricslive.com",
-  "main": "index.js",
+  "version": "2.0.0",
+  "description": "Get lyrics from 4 sites, lyrics.com, musixmatch.com, azlyrics.com and lyricslive.com [2.0 branch]",
+  "main": "src/musixmatch.js",
   "directories": {
     "lib": "lib"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.2",
-    "node-fetch": "^2.3.0"
+    "node-fetch": "^2.3.0",
+    "xmldom": "^0.1.27",
+    "xpath": "0.0.27"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "node test.js",
     "start": "node index.js"
   },
   "repository": {
