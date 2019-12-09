@@ -1,64 +1,33 @@
 # 4Lyrics
-Get lyrics from 4 different sites!
-With user input :)
-* Musixmatch
-* azlyrics
-* lyrics.com
-* lyricslive
+Get lyrics from MusixMatch.com!
 
-***
-## Benefits
-* Support for multiple sites.
-* Asynchronous.
-* Easy implementation.
-***
-## Downsides
-* UNOFFICAL "APIs". Read sites' TOS and EULA before using.
-* Possible revocation of access to site(s).
-* NO Captcha support (submit a pull request).
-***
+## Benefits (over main branch)
+* Only 3 dependencies.
+* Uses ``xpatch`` and ``xmldom`` instead.
+* getURL**s** now returns a list of URLs.
 
-# Basic Use
-* Examples used from test file
+# Example
+* The first URL shown is the best result.
 ```js
-const lyrics = require('4lyrics');
-```
+const { MusixMatch } = require('./lib/musixmatch');
+const m = new MusixMatch();
 
-# Musixmatch
-```js
-lyrics.musixmatch.getURL('more than a feeling')
-    .then(r => lyrics.musixmatch.getLyrics(r))
-    .then(() => console.log('musixmatch lyrics obtained'))
-    .catch(console.error);
+(async () => {
+    await m.fetchURL('Boston more than a feeling');
+    /*
+        [ 'https://musixmatch.com/lyrics/Boston/More-Than-Feeling',
+        'https://musixmatch.com/lyrics/Boston/More-Than-Feeling',
+        'https://musixmatch.com/lyrics/Boston/More-Then-a-Feeling',
+        'https://musixmatch.com/lyrics/Igor-Presnyakov/More-Than-a-Feeling-Boston',
+        'https://musixmatch.com/lyrics/Boston/More-Than-a-Feelin',
+        'https://musixmatch.com/lyrics/Eminem/Nail-in-the-Coffin',
+        'https://musixmatch.com/lyrics/Eminem/Eminem-I-m-a-Big-Deal',
+        'https://musixmatch.com/lyrics/Childish-Gambino/All-Yall',
+        'https://musixmatch.com/lyrics/Boston/Feeling-Satisfied',
+        'https://musixmatch.com/lyrics/The-Devil-Wears-Prada/Worldwide',
+        'https://musixmatch.com/lyrics/Rich-Homie-Quan/Sorry' ]
+    */
+})();
 ```
-
-# Azlyrics
-```js
-lyrics.azlyrics.getURL('queen you\'re my best friend')
-    .then(r => lyrics.azlyrics.getLyrics(r))
-    .then(() => console.log('azlyrics lyrics obtained'))
-    .catch(console.error);
-```
-
-# Lyrics.com
-```js
-lyrics.lyricscom.getURL('limelight')
-    .then(r => lyrics.lyricscom.getLyrics(r))
-    .then(() => console.log('lyrics.com lyrics obtained'))
-    .catch(console.error);
-```
-
-# Lyricslive
-```js
-lyrics.lyricslive.getURL('don\'t stop')
-    .then(r => lyrics.lyricslive.getLyrics(r))
-    .then(() => console.log('lyricslive lyrics obtained'))
-    .catch(console.error);
-```
-
-# Changelog
-1.1.5: Remove more divs in musixmatch that interfere.
-1.1.6: Add a second way of detection and remove "hacky" code.
-1.1.61: Fix a bug that caused lyrics to be removed accidentally.
 
 
