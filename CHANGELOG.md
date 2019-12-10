@@ -12,7 +12,7 @@
 # v2.0.0 (12/9/19)
 * Remove Cheerio as a dependency (MusixMatch *only* for now).
 * Remove support for other sites temporarily.
-* Uses ``node-fetch``, ``xpath``, and ``xml-dom``.
+* Uses ``node-fetch``, ``xpath``, and ``xmldom``.
 * getURL**s** now returns an array of URLs found.
 * Replaces Promise chains with async/await.
 * Handles errors (request not returning 200 status, other errors potentially thrown by ``node-fetch``).
@@ -23,5 +23,8 @@
 # v2.0.1 (12/9/19)
 * Rename ``lib`` to ``src``.
 * Removed useless files.
-* Rename ``MusixMatch.getURLs`` to ``MusixMatch.parseURLs``.
 * Updated ``README.md`` and added ``CHANGELOG.md``.
+* Removed headers that didn't comply with the fetch [spec](https://fetch.spec.whatwg.org/#forbidden-header-name).
+* Added in a function to fetch song lyrics given a valid musixmatch URL.
+* Added a property in the MusixMatch class to get a random user-agent.
+* Disable ``xmldom`` logging (errors and warnings).
