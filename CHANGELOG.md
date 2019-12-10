@@ -28,3 +28,6 @@
 * Added in a function to fetch song lyrics given a valid musixmatch URL.
 * Added a property in the MusixMatch class to get a random user-agent.
 * Disable ``xmldom`` logging (errors and warnings).
+
+# v2.0.2 (12/10/19)
+* Add typings (of some form).

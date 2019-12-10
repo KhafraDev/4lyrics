@@ -1,6 +1,6 @@
 const { join } = require('path');
 const { readFileSync } = require('fs');
-const UserAgents = readFileSync(join(__dirname, '..', 'user-agents.txt')).toString();
+const UserAgents = readFileSync(join(__dirname, '..', 'user-agents.txt')).toString().split('\n');
 
 const fetch = require('node-fetch');
 const { select } = require('xpath');
@@ -9,11 +9,18 @@ const { DOMParser } = require('xmldom');
 const SEARCH_URL = 'https://www.musixmatch.com/search/';
 
 class MusixMatch {
+    /**
+     * @returns {string} Random user agent
+     */
     get useragent() {
         return UserAgents[Math.floor(Math.random() * UserAgents.length)];
     }
 
-    async fetchURL(q) {
+    /**
+     * Fetches a list of song lyric URLs based on the query.
+     * @param {string} q Query
+     */
+    async fetchURLs(q) {
         try {
             const res = await fetch(SEARCH_URL + encodeURIComponent(q), {
                 headers: { // headers found after making a search
@@ -35,6 +42,11 @@ class MusixMatch {
         }
     }
 
+    /**
+     * Parses the HTML fetched previously, returning an array of URLs.
+     * @param {string} t HTML
+     * @returns Array of URLs
+     */
     parseURLs(t) {
         const doc = new DOMParser({ errorHandler: {warning:()=>{}, error:()=>{}} }).parseFromString(t);
         const nodes = select('//a[@class="title"]', doc);        
@@ -53,6 +65,10 @@ class MusixMatch {
         return list;
     }
 
+    /**
+     * Fetch lyrics from specified URL
+     * @param {string} url 
+     */
     async fetchLyrics(url) {
         if(!/https?:\/\/(www.)?musixmatch.com\/lyrics\//.test(url)) throw new Error('Invalud URL ' + url);
 
@@ -72,6 +88,11 @@ class MusixMatch {
         return this.parseLyrics(await res.text());
     }
 
+    /**
+     * Parse the page's HTML and return the lyrics.
+     * @param {string} t 
+     * @returns {Array<string>} Array of lyric blocks
+     */
     parseLyrics(t) {
         const doc = new DOMParser({ errorHandler: {warning:()=>{}, error:()=>{}} }).parseFromString(t);
         const nodes = select('//span[@class="lyrics__content__ok"]', doc);        
