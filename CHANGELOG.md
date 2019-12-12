@@ -23,11 +23,13 @@
 # v2.0.1 (12/9/19)
 * Rename ``lib`` to ``src``.
 * Removed useless files.
-* Updated ``README.md`` and added ``CHANGELOG.md``.
 * Removed headers that didn't comply with the fetch [spec](https://fetch.spec.whatwg.org/#forbidden-header-name).
 * Added in a function to fetch song lyrics given a valid musixmatch URL.
 * Added a property in the MusixMatch class to get a random user-agent.
 * Disable ``xmldom`` logging (errors and warnings).
 
 # v2.0.2 (12/10/19)
-* Add typings (of some form).
+* Add functional typings for TypeScript users.
+
+# v2.0.3 (12/11/19)
+* Add AzLyrics.com support.
