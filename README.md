@@ -1,5 +1,6 @@
 # 4Lyrics
 A webscraper to parse and return lyrics from different sites.
+No API keys required!
 
 ## Benefits (over main branch)
 * Only 3 dependencies.
@@ -9,7 +10,7 @@ A webscraper to parse and return lyrics from different sites.
 * Versatile; easily adaptable to other sites.
 * Removed Lyricslive module entirely as the site is now defunct. ``songlyrics.com`` is added in place.
 
-# Examples
+# Quick-start
 
 ```js
 const { MusixMatch, AzLyrics, SongLyricsCom, LyricsCom } = require('./lib/musixmatch');
@@ -24,19 +25,19 @@ const L = new LyricsCom();
     const m_l = await M.fetchLyrics(m_u[0]);
     // azlyrics
     const a_u = await A.fetchURLs('Boston more than a feeling');
-    const a_l = await A.fetchLyrics(m_u[0]);
+    const a_l = await A.fetchLyrics(a_u[0]);
     // songlyrics.com
     const s_u = await S.fetchURLs('Boston more than a feeling');
-    const s_l = await S.fetchLyrics(m_u[0]);
+    const s_l = await S.fetchLyrics(s_u[0]);
     // lyrics.com
     const l_u = await L.fetchURLs('Boston more than a feeling');
-    const l_l = await L.fetchLyrics(m_u[0]);
+    const l_l = await L.fetchLyrics(l_u[0]);
 })();
 ```
 
 ## Note
 * If no lyrics or URLs are found, an empty array is returned.
-* 
+* Musixmatch is recommended for search accuracy and lyric accuracy.
 
 # WIP
 1. Options (URL limits, etc.).
