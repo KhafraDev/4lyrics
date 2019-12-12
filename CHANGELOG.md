@@ -33,3 +33,9 @@
 
 # v2.0.3 (12/11/19)
 * Add AzLyrics.com support.
+* Add Lyrics.com support.
+* Attempted to add Genius.com support but ``node-fetch`` was detected (503 error).
+
+# v2.0.4 (12/11/19)
+* Add Songlyrics.com support.
+* Add in Utility function ``validateHeaders``.
