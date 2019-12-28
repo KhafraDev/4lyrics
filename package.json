@@ -1,5 +1,5 @@
 {
-  "name": "4lyrics",
+  "name": "4lyric",
   "version": "2.0.4",
   "description": "Get lyrics from 4 sites, lyrics.com, musixmatch.com, azlyrics.com and lyricslive.com [2.0 branch]",
   "main": "src/index.js",

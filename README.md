@@ -11,6 +11,7 @@ No API keys required!
 * Removed Lyricslive module entirely as the site is now defunct. ``songlyrics.com`` is added in place.
 
 # Quick-start
+* Install the module using ``npm i --save 4lyric``.
 
 ```js
 const { MusixMatch, AzLyrics, SongLyricsCom, LyricsCom } = require('./lib/musixmatch');
